@@ -1,32 +1,35 @@
 # RailFlow — Rails‑First Delivery Templates (README)
 
-> **RailFlow** — _Build the rails, then flow._ These templates put ChatGPT into **RailFlow** mode: once the **rails** (tests, templates, CI gates) are laid, you mostly **monitor** and make **small corrections**, while quality runs automatically.
-> 
+> **RailFlow** — *Build the rails, then flow.* These templates put ChatGPT into **RailFlow** mode: once the **rails** (tests, templates, CI gates) are laid, you mostly **monitor** and make **small corrections**, while quality runs automatically.
+>
 > This README is in English to match the templates; adapt as needed.
 
 ---
 
-## 1) What's inside (Templates)
+## 1) What’s inside (Templates)
 
 Reusable, tech‑agnostic files under `docs/guide/`:
 
-**ChatGPT helps build these 4 core artifacts:**
 1. **01‑System‑TDD‑First.md** — TDD‑first playbook (workflow, watch mode, mocks/ADRs, contracts, CI gates).
 2. **02‑Functional‑Spec‑MVP.md** — Functional spec (capability map, flows with BDD, rules, time semantics, contracts, NFRs, telemetry).
 3. **03‑Project‑Brief‑and‑Standards.md** — Project brief + engineering standards (KPIs, quality bar, branching, docs).
 4. **04‑UX‑UI‑and‑Animations‑Guidelines.md** — UX, a11y, and motion guidelines (states, reduced‑motion policy, loading, errors).
+5. **05‑Status‑Report.md** — Evidence‑backed status report (metrics, links to CI/dashboards, JSON summary).
 
-**AI coding tools (like Cursor) use this template:**
-5. **05‑Status‑Report.md** — Evidence‑backed status report template for AI to track progress and generate reports (metrics, links to CI/dashboards, JSON summary).
+**How these are used**
+
+* **ChatGPT builds the 3 development artifacts:** **02**, **03**, **04** (specs, standards, UX).
+* **AI coding tools (like Cursor) use directly:** **01** and **05** during coding and reporting.
+* **Commit all five to the repo:** AI tools read them as **rails** to guide development.
 
 ---
 
 ## 2) Benefits (Why RailFlow)
 
 * **Faster feedback, less rework** — short **Red → Green → Refactor** loops with the test runner in **watch**.
-* **Quality by policy** — CI gates (tests, coverage, contracts, a11y/perf/security) block merges when the bar isn't met.
+* **Quality by policy** — CI gates (tests, coverage, contracts, a11y/perf/security) block merges when the bar isn’t met.
 * **Traceability** — ADRs + templates link decisions → tests → code → CI → reports.
-* **AI as a copilot** — clear prompts turn ChatGPT into a **RailFlow** that drafts/updates the 4 core artifacts, while AI coding tools use the status report template.
+* **AI pairing** — ChatGPT drafts/updates the **3 development artifacts** (02/03/04), while AI coding tools consume **01** and **05** during coding and reporting.
 * **Reuse across teams** — consistent structure = easier onboarding, reviews, audits.
 
 ---
@@ -72,18 +75,17 @@ Goal: initialize a new project by filling five templates under docs/guide/ while
 My high‑level idea (refine with me):
 <PASTE YOUR PROJECT IDEA>
 
-Please work in this order to build the 4 core artifacts:
-1) 01-System-TDD-First.md (workflow, watch mode, gates, contracts)
-2) 03-Project-Brief-and-Standards.md (brief, KPIs, quality bar)
-3) 02-Functional-Spec-MVP.md (capabilities, flows, rules, contracts, NFRs)
-4) 04-UX-UI-and-Animations-Guidelines.md (states, a11y, motion)
+Please work in this order **to build the 3 development artifacts**:
+1) 03-Project-Brief-and-Standards.md (brief, KPIs, quality bar)
+2) 02-Functional-Spec-MVP.md (capabilities, flows, rules, contracts, NFRs)
+3) 04-UX-UI-and-Animations-Guidelines.md (states, a11y, motion)
 
-The 5th template (05-Status-Report.md) is for AI coding tools to track progress and generate reports.
+**Note:** 01-System-TDD-First.md and 05-Status-Report.md are used directly by AI coding tools (like Cursor). Ensure both exist in `docs/guide/` and are linked in the repo.
 
 Rules:
 - Keep it implementation‑agnostic; write measurable, testable statements.
 - Propose default thresholds (coverage, budgets) and allow me to edit them.
-- Add a short "Customization Matrix" at the end of each file with placeholders.
+- Add a short “Customization Matrix” at the end of each file with placeholders.
 - Link sections to each other when relevant (e.g., contracts in 02 referenced by 01/03).
 - Surface open questions explicitly with owners and due dates.
 
@@ -93,7 +95,7 @@ Output format: Markdown only, with the exact filename as the first line.
 
 ### Option B — **Step‑by‑Step** (one file per thread)
 
-Use these prompts individually in ChatGPT:
+Use these prompts individually in ChatGPT **to build the 3 development artifacts (03, 02, 04)**:
 
 **03 — Project Brief & Standards**
 
@@ -119,36 +121,19 @@ Fill `docs/guide/04-UX-UI-and-Animations-Guidelines.md` with component states, a
 Idea: <PASTE>
 ```
 
-**01 — TDD‑First Playbook**
-
-```
-Fill `docs/guide/01-System-TDD-First.md` keeping TDD-first and test runner in watch mode. Include commit/PR conventions, mocks policy with ADRs and expiries, contract testing policy, feature flags governance, CI gates, observability minimum, and templates (ADR/PR/test case).
-
-Context: reference the contracts & budgets from 02 and the quality bar from 03.
-```
-
-**05 — Status Report**
-
-```
-Fill `docs/guide/05-Status-Report.md` for the first reporting period. Add machine‑readable JSON summary and link placeholders for CI, coverage, contracts, perf/a11y dashboards, and SLOs. Keep it evidence‑backed.
-
-Context: refer to the KPIs from 03 and test metrics from 01/02.
-```
+**Note:** Keep **01** and **05** in the repo for AI coding tools (like Cursor) to use during coding and reporting.
 
 ---
 
 ## 5) Recommended Completion Order
 
-**ChatGPT builds these 4 core artifacts in order:**
-1. **01 — TDD‑First**: lay the rails (workflow, watch mode, gates, contracts, observability).
-2. **03 — Project Brief & Standards**: align purpose, KPIs, quality bar, repo norms.
-3. **02 — Functional Spec (MVP)**: define capabilities, flows, rules, time & data contracts.
-4. **04 — UX, UI & Motion**: lock states, a11y, motion policies.
+1. **01 — TDD‑First**: lay the rails (workflow, watch mode, gates, contracts, observability). *(Used directly by AI coding tools.)*
+2. **03 — Project Brief & Standards**: align purpose, KPIs, quality bar, repo norms. *(ChatGPT builds.)*
+3. **02 — Functional Spec (MVP)**: define capabilities, flows, rules, time & data contracts. *(ChatGPT builds.)*
+4. **04 — UX, UI & Motion**: lock states, a11y, motion policies. *(ChatGPT builds.)*
+5. **05 — Status Report**: establish the cadence and evidence links. *(Used directly by AI coding tools.)*
 
-**AI coding tools (like Cursor) use:**
-5. **05 — Status Report**: template for tracking progress and generating evidence-backed reports.
-
-> This order lays down the rails first (TDD workflow & gates), then clarifies scope and standards, and only then details specs and UX. The status report template enables AI tools to monitor and report on the project.
+> Commit **all five**. AI coding tools read them as **rails** to guide development.
 
 ---
 
@@ -178,7 +163,7 @@ If you maintain a mono‑repo, link to these docs from each package/service READ
 ## 8) Collaboration Tips with ChatGPT
 
 * **Be specific:** provide the project idea, target users, constraints, and success metrics.
-* **Iterate:** ask ChatGPT to revise sections (e.g., "tighten KPIs", "add error states").
+* **Iterate:** ask ChatGPT to revise sections (e.g., “tighten KPIs”, “add error states”).
 * **Ground in tests:** request BDD examples and acceptance criteria for every capability.
 * **Ask for matrices:** coverage thresholds, perf/a11y budgets, traceability tables.
 * **Keep scope tight:** small iterations beat giant specs no one reads.
@@ -187,20 +172,19 @@ If you maintain a mono‑repo, link to these docs from each package/service READ
 
 ## 9) License & Attribution
 
-Add your project's license here. Attribution to the **RailFlow — Rails‑First Delivery** templates is appreciated when reused.
+Add your project’s license here. Attribution to the **RailFlow — Rails‑First Delivery** templates is appreciated when reused.
 
 ---
 
 ### One‑Shot Prompt (copy/paste)
 
 ```
-Help me initialize a new project using the RailFlow (Rails‑First Delivery) templates. I will provide a product idea. Please produce, in order and as separate Markdown files, the filled versions of the 4 core artifacts:
-- 01-System-TDD-First.md
+Help me initialize a new project using the RailFlow (Rails‑First Delivery) templates. I will provide a product idea. Please produce, in order and as separate Markdown files, the filled versions of the **3 development artifacts**:
 - 03-Project-Brief-and-Standards.md
 - 02-Functional-Spec-MVP.md
 - 04-UX-UI-and-Animations-Guidelines.md
 
-The 5th template (05-Status-Report.md) is for AI coding tools to track progress and generate reports.
+Note: 01-System-TDD-First.md and 05-Status-Report.md are used directly by AI coding tools (like Cursor). Ensure both exist in docs/guide/ and link them in the repo.
 
 Use measurable acceptance criteria, propose default thresholds, surface open questions, and keep everything technology‑agnostic. Ask for clarifications between files.
 Idea: <PASTE HERE>

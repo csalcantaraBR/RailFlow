@@ -1,12 +1,12 @@
-# `docs/guide/05-Status-Report.md` — Status Report Template (Reusable)
+# `docs/guide/05-Status-Report.md` — Status Report Template for AI Coding Tools
 
 **Version:** `<v1.0>`
 **Status:** `<Draft | Approved>`
-**Owner:** `<Team/Org>`
+**Owner:** `<AI Tool (e.g., Cursor) | Team/Org>`
 **Period Covered:** `<YYYY-MM-DD → YYYY-MM-DD>`
 **Last updated:** `<YYYY-MM-DD>`
 
-> **How to use:** Duplicate this file per reporting period. Keep it short but **evidence‑backed**. Everything should link to PRs, dashboards, or artifacts. Prefer **facts & links** over prose. Sections are modular—delete what doesn’t apply.
+> **How to use:** This template is designed for AI coding tools (like Cursor) to track project progress and generate evidence-backed reports. Duplicate this file per reporting period. Keep it short but **evidence‑backed**. Everything should link to PRs, dashboards, or artifacts. Prefer **facts & links** over prose. Sections are modular—delete what doesn't apply.
 
 ---
 
